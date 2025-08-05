@@ -3,6 +3,9 @@ dependencies = [
   "copier",
   "uv"
 ]
+scripts.copy = [
+  "copier copy . .tmp -f -d plugin_name=aiida-test",
+]
 scripts.install = [
   "copier copy . .tmp -f -d plugin_name=aiida-test",
   "uv pip install .tmp/aiida-test",
