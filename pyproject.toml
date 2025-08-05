@@ -1,3 +1,12 @@
+[tool.hatch.envs.docs]
+dependencies = [
+  "mkdocs",
+  "mkdocs-material"
+]
+scripts.build = "mkdocs build --clean --strict"
+scripts.serve = "mkdocs serve --dev-addr localhost:8000"
+
+
 [tool.hatch.envs.template]
 dependencies = [
   "copier",
