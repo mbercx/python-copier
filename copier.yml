@@ -1,0 +1,12 @@
+plugin_name:
+  type: str
+  help: 'What is the name of your plugin package?'
+
+description:
+  type: str
+  help: 'Describe what your plugin package is for.'
+  default: 'AiiDA plugin package'
+
+_subdirectory: template
+_message_after_copy: |
+  The `{{plugin_name}}` package has been created successfully!
