@@ -23,3 +23,11 @@ classifiers = [
 
 [tool.hatch.version]
 path = "src/{{ plugin_name.lower().replace('-', '_') }}/__about__.py"
+
+
+[tool.hatch.envs.docs]
+dependencies = [
+  "mystmd"
+]
+scripts.build = "cd docs && myst build"
+scripts.start = "cd docs && myst start"

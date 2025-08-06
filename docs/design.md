@@ -32,3 +32,13 @@ This pattern has a few advantages:
 * **Single source of truth**: The version lives inside your package, making it accessible at runtime via `import`.
 * **Tool-friendly**: Hatch can automatically read and update this file using `[tool.hatch.version]`, supporting both static and dynamic versioning.
 * **Clean packaging**: Keeps `pyproject.toml` minimal, and avoids cluttering the `__init__.py` with metadata.
+
+## Documentation
+
+We use MyST Markdown for our AiiDA plugin package documentation:
+
+https://mystmd.org/
+
+We want to use a Markdown-based documentation tool for simplicity, avoiding Sphinx' reStructuredText format.
+The main reason to use this over [MkDocs](https://www.mkdocs.org/) to test the Jupyter notebook integration, especially the "executable content".
+MyST is also easy to integrate with Sphinx, which has a lot of powerful tools, especially for scientific software.

@@ -24,6 +24,10 @@ scripts.check = [
   "copier copy . .tmp -f -d plugin_name=aiida-test",
   "hatch fmt -l --check .tmp/aiida-test",
 ]
+scripts.docs = [
+  "copier copy . .tmp -f -d plugin_name=aiida-test",
+  "cd .tmp/aiida-test/docs && myst start",
+]
 scripts.clean = [
   "ruff clean",
   "rm -rf .tmp",
