@@ -1,0 +1,34 @@
+# Design
+
+## Build system
+
+This template uses **[Hatch](https://hatch.pypa.io/)** as the build backend and project manager.
+
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+```
+
+### ✅ Why choose Hatch?
+
+Hatch is a modern, [PEP 517](https://peps.python.org/pep-0517/)-compliant build backend.
+Main features:
+
+**Tool consolidation**
+
+Hatch can also manage virtual environments, test runners, and formatters (e.g. `hatch fmt`), reducing reliance on multiple tools.
+
+**[PEP 621](https://peps.python.org/pep-0621/) support**
+
+Clean, declarative configuration in `pyproject.toml`.
+Keeping the number of configuration files minimal.
+
+**Integrated versioning**
+
+Instead of hardcoding the version number in `pyproject.toml`, we delegate it to a separate file (`__about__.py`) inside the source tree.
+This pattern has a few advantages:
+
+* **Single source of truth**: The version lives inside your package, making it accessible at runtime via `import`.
+* **Tool-friendly**: Hatch can automatically read and update this file using `[tool.hatch.version]`, supporting both static and dynamic versioning.
+* **Clean packaging**: Keeps `pyproject.toml` minimal, and avoids cluttering the `__init__.py` with metadata.
