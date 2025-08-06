@@ -1,4 +1,4 @@
-# Welcome to AiiDA plugin `copier`
+# AiiDA plugin `copier`
 
 A `copier`-based template for AiiDA plugin packages.
 
