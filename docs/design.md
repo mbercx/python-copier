@@ -35,10 +35,7 @@ This pattern has a few advantages:
 
 ## Documentation
 
-We use MyST Markdown for our AiiDA plugin package documentation:
-
-https://mystmd.org/
-
+We use [MyST Markdown](https://mystmd.org/) for our AiiDA plugin package documentation.
 We want to use a Markdown-based documentation tool for simplicity, avoiding Sphinx' reStructuredText format.
 The main reason to use this over [MkDocs](https://www.mkdocs.org/) to test the Jupyter notebook integration, especially the "executable content".
 MyST is also easy to integrate with Sphinx, which has a lot of powerful tools, especially for scientific software.

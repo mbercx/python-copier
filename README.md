@@ -4,10 +4,7 @@ Template for AiiDA plugin packages based on [`copier`](https://copier.readthedoc
 
 ## Usage
 
-You'll first have to install `copier`:
-
-https://copier.readthedocs.io/en/latest/#installation
-
+Follow the [`copier` installation instructions](https://copier.readthedocs.io/en/latest/#installation).
 Then simply run
 
 ```

@@ -1,9 +1,14 @@
-# AiiDA plugin `copier`
+# Introduction
 
 A `copier`-based template for AiiDA plugin packages.
 
-## Project layout
+## Usage
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
+Follow the [`copier` installation instructions](https://copier.readthedocs.io/en/latest/#installation).
+Then simply run
+
+```
+copier copy https://github.com/mbercx/aiida-plugin-copier .
+```
+
+And answer the questions to generate a new AiiDA plugin package in the current directory.
