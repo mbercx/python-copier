@@ -14,7 +14,7 @@ dependencies = [
   "uv"
 ]
 scripts.copy = [
-  "copier copy . .tmp -f -d plugin_name=aiida-test",
+  "copier copy . {args:.tmp} -f -d plugin_name=aiida-test",
 ]
 scripts.install = [
   "copier copy . .tmp -f -d plugin_name=aiida-test",
