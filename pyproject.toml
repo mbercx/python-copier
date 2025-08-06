@@ -1,14 +1,4 @@
-[tool.hatch.envs.docs]
-dependencies = [
-  "mkdocs",
-  "mkdocs-material"
-]
-scripts.build = "mkdocs build --clean --strict"
-scripts.serve = "mkdocs serve --dev-addr localhost:8000"
-scripts.deploy = "mkdocs gh-deploy --force"
-
-
-[tool.hatch.envs.template]
+[tool.hatch.envs.default]
 dependencies = [
   "copier",
   "uv"
@@ -32,3 +22,14 @@ scripts.clean = [
   "ruff clean",
   "rm -rf .tmp",
 ]
+
+
+[tool.hatch.envs.docs]
+detached = true
+dependencies = [
+  "mkdocs",
+  "mkdocs-material"
+]
+scripts.build = "mkdocs build --clean --strict"
+scripts.serve = "mkdocs serve --dev-addr localhost:8000"
+scripts.deploy = "mkdocs gh-deploy --force"
