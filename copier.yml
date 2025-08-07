@@ -1,8 +1,7 @@
 plugin_name:
   type: str
   help: 'What is the name of your plugin package?'
-  default: '{{ _copier_conf.dst_path | basename }}'
-
+  default: '{{_folder_name }}'
 description:
   type: str
   help: 'Describe what your plugin package is for.'
