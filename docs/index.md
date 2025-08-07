@@ -1,4 +1,4 @@
-# Introduction
+# Getting Started
 
 A `copier`-based template for AiiDA plugin packages.
 
@@ -11,4 +11,4 @@ Then simply run
 copier copy https://github.com/mbercx/aiida-plugin-copier <plugin_name>
 ```
 
-And answer the questions to generate a new AiiDA plugin package in the current directory.
+And answer the questions to generate a new AiiDA plugin package.
