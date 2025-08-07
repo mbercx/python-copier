@@ -8,7 +8,7 @@ Follow the [`copier` installation instructions](https://copier.readthedocs.io/en
 Then simply run
 
 ```
-copier copy https://github.com/mbercx/aiida-plugin-copier .
+copier copy https://github.com/mbercx/aiida-plugin-copier <plugin_name>
 ```
 
 And answer the questions to generate a new AiiDA plugin package in the current directory.

@@ -4,18 +4,18 @@ dependencies = [
   "uv"
 ]
 scripts.copy = [
-  "copier copy . {args:.tmp} -f -d plugin_name=aiida-test",
+  "copier copy . {args:.tmp} -f",
 ]
 scripts.install = [
-  "copier copy . .tmp -f -d plugin_name=aiida-test",
+  "copier copy . .tmp/aiida-test -f",
   "uv pip install .tmp/aiida-test",
 ]
 scripts.check = [
-  "copier copy . .tmp -f -d plugin_name=aiida-test",
+  "copier copy . .tmp/aiida-test -f",
   "hatch fmt -l --check .tmp/aiida-test",
 ]
 scripts.docs = [
-  "copier copy . .tmp -f -d plugin_name=aiida-test",
+  "copier copy . .tmp/aiida-test -f",
   "cd .tmp/aiida-test/docs && myst start",
 ]
 scripts.clean = [
