@@ -39,3 +39,17 @@ We use [MyST Markdown](https://mystmd.org/) for our AiiDA plugin package documen
 We want to use a Markdown-based documentation tool for simplicity, avoiding Sphinx' reStructuredText format.
 The main reason to use this over [MkDocs](https://www.mkdocs.org/) to test the Jupyter notebook integration, especially the "executable content".
 MyST is also easy to integrate with Sphinx, which has a lot of powerful tools, especially for scientific software.
+
+## DevOps
+
+This template includes development automation tools that ensure code quality, consistency, and developer efficiency.
+
+### Pre-commit hooks
+
+We use [`pre-commit`](https://pre-commit.com/) to run automated checks before each commit.
+The configuration is stored in `.pre-commit-config.yaml`, and only uses `hatch fmt` in two separate steps:
+
+* `hatch fmt -f`
+* `hatch fmt -l`
+
+The steps are separated in first _formatting_ the code, then _linting_ it to check for issues.

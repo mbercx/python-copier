@@ -31,3 +31,9 @@ dependencies = [
 ]
 scripts.build = "cd docs && myst build"
 scripts.start = "cd docs && myst start"
+
+
+[tool.hatch.envs.precommit]
+dependencies = ["pre-commit"]
+scripts.install = "pre-commit install"
+scripts.run = "pre-commit run {args:--all-files}"
