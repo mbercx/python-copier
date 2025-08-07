@@ -1,3 +1,5 @@
 site_name: AiiDA-plugin-copier
 theme:
   name: material
+markdown_extensions:
+  - admonition
