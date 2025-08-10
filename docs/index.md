@@ -1,6 +1,6 @@
 # Getting Started
 
-A `copier`-based template for AiiDA plugin packages.
+A `copier`-based template for Python packages.
 
 ## Usage
 
@@ -8,7 +8,7 @@ Follow the [`copier` installation instructions](https://copier.readthedocs.io/en
 Then simply run
 
 ```
-copier copy https://github.com/mbercx/aiida-plugin-copier <plugin_name>
+copier copy https://github.com/mbercx/python-copier <package_name>
 ```
 
-And answer the questions to generate a new AiiDA plugin package.
+And answer the questions to generate a new Python package.

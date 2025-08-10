@@ -1,22 +1,23 @@
 [tool.hatch.envs.default]
 dependencies = [
   "copier",
-  "uv"
+  "uv",
+  "mystmd"
 ]
 scripts.copy = [
-  "copier copy --vcs-ref=HEAD . {args:.tmp/aiida-test} -f",
+  "copier copy --vcs-ref=HEAD . {args:.tmp/py-package} -f",
 ]
 scripts.install = [
-  "copier copy --vcs-ref=HEAD . .tmp/aiida-test -f",
-  "uv pip install .tmp/aiida-test",
+  "copier copy --vcs-ref=HEAD . .tmp/py-package -f",
+  "uv pip install .tmp/py-package",
 ]
 scripts.check = [
-  "copier copy --vcs-ref=HEAD . .tmp/aiida-test -f",
-  "hatch fmt -l --check .tmp/aiida-test",
+  "copier copy --vcs-ref=HEAD . .tmp/py-package -f",
+  "hatch fmt -l --check .tmp/py-package",
 ]
 scripts.docs = [
-  "copier copy --vcs-ref=HEAD . .tmp/aiida-test -f",
-  "cd .tmp/aiida-test/docs && myst start",
+  "copier copy --vcs-ref=HEAD . .tmp/py-package -f",
+  "cd .tmp/py-package/docs && myst start",
 ]
 scripts.clean = [
   "ruff clean",

@@ -2,7 +2,7 @@
 
 !!! Info
 
-    Just to clarify: this guide is for developers of the `copier` template, not AiiDA plugin package developers.
+    Just to clarify: this guide is for developers of the `copier` template, not Python package developers.
 
 This template package uses several [Hatch environments](https://hatch.pypa.io/latest/environment/) to execute developer tasks or "scripts".
 To see the environments and their corresponding scripts, run:
@@ -21,7 +21,7 @@ The default Hatch environment defines a set of scripts related to the template, 
 
     hatch run copy <target_directory>
 
-Will copy the fully rendered template as the `aiida-test` package in the `<target_directory>`.
+Will copy the fully rendered template as the `py-package` package in the `<target_directory>`.
 Other scripts for the default environment:
 
 * `check`: Copy/Update the template in the `.tmp` directory and check the rendered files by linting them with `hatch fmt -l`.

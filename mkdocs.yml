@@ -1,4 +1,4 @@
-site_name: AiiDA-plugin-copier
+site_name: Python copier
 theme:
   name: material
 markdown_extensions:
