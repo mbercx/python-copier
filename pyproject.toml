@@ -5,7 +5,7 @@ dependencies = [
   "mystmd"
 ]
 scripts.copy = [
-  "copier copy --vcs-ref=HEAD . {args:.tmp/py-package} -f",
+  "copier copy --vcs-ref=HEAD . {args:.tmp/py-package}",
 ]
 scripts.install = [
   "copier copy --vcs-ref=HEAD . .tmp/py-package -f",
