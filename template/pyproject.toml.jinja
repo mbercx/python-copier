@@ -24,14 +24,24 @@ classifiers = [
 [tool.hatch.version]
 path = "src/{{ package_name.lower().replace('-', '_') }}/__about__.py"
 
-
+{% if docs == 'myst'-%}
 [tool.hatch.envs.docs]
 dependencies = [
   "mystmd"
 ]
 scripts.build = "cd docs && myst build"
 scripts.start = "cd docs && myst start"
+{%- endif -%}
 
+{%- if docs == 'mkdocs' -%}
+[tool.hatch.envs.docs]
+dependencies = [
+  "mkdocs",
+  "mkdocs-material"
+]
+scripts.build = "mkdocs build --clean --strict"
+scripts.serve = "mkdocs serve --dev-addr localhost:8000"
+{%- endif %}
 
 [tool.hatch.envs.precommit]
 dependencies = ["pre-commit"]

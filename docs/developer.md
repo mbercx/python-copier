@@ -26,7 +26,6 @@ Other scripts for the default environment:
 
 * `check`: Copy/Update the template in the `.tmp` directory and check the rendered files by linting them with `hatch fmt -l`.
 * `clean`: Remove the `.tmp` directory and any Ruff caches.
-* `docs`: Copy/Update the template in the `.tmp` directory and serve the documentation with `myst start`.
 * `install`: Copy/Update the template in the `.tmp` directory and install it with `uv pip install`.
 
 ## Documentation

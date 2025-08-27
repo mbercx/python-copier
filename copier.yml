@@ -2,10 +2,19 @@ package_name:
   type: str
   help: 'What is the name of your Python package?'
   default: '{{_folder_name }}'
+
 description:
   type: str
   help: 'Describe what your Python package is for.'
   default: 'Python package'
+
+docs:
+  type: str
+  help: 'Which documentation engine do you prefer?'
+  choices:
+    - myst
+    - mkdocs
+  default: myst
 
 _subdirectory: template
 _message_after_copy: |

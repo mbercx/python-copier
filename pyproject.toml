@@ -15,15 +15,10 @@ scripts.check = [
   "copier copy --vcs-ref=HEAD . .tmp/py-package -f",
   "hatch fmt -l --check .tmp/py-package",
 ]
-scripts.docs = [
-  "copier copy --vcs-ref=HEAD . .tmp/py-package -f",
-  "cd .tmp/py-package/docs && myst start",
-]
 scripts.clean = [
   "ruff clean",
   "rm -rf .tmp",
 ]
-
 
 [tool.hatch.envs.docs]
 detached = true
