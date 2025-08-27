@@ -40,3 +40,15 @@ To run these scripts, you need to specify the `docs` environment in the `hatch r
 
     The `docs:deploy` script will use `mkdocs gh-deploy` to deploy the documentation as a GitHub Pages website.
     This should rarely be done manually, since we have a GitHub Action set up to do this.
+
+## Release
+
+To make a new release of the template package, simply tag the commit you want to release:
+
+    git tag -a v0.3.0 -m '🚀 Release `v0.3.0`'
+
+And then push the tag to the remote, here named `origin`:
+
+    git push origin --tags
+
+You can the go to the [Github releases](https://github.com/mbercx/python-copier/releases) and make a new release based on the new tag.
