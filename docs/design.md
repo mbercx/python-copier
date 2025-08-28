@@ -50,6 +50,7 @@ MyST is also easy to integrate with Sphinx, which has a lot of powerful tools, e
 Some features:
 
 1. Very simple to build and write, not too much faff.
+1. Builds/serves very fast (faster than MyST in my experience).
 1. Static pages, easy to host.
 1. Sleek look, using [Material for MkDocs](https://github.com/squidfunk/mkdocs-material).
 
