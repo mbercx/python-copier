@@ -41,6 +41,7 @@ dependencies = [
 ]
 scripts.build = "mkdocs build --clean --strict"
 scripts.serve = "mkdocs serve --dev-addr localhost:8000"
+scripts.deploy = "mkdocs gh-deploy --force"
 {%- endif %}
 
 [tool.hatch.envs.precommit]
