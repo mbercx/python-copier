@@ -15,8 +15,8 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: 3.X
 
       # Use configured `hatch` environment for MkDocs deployment
-      - run: pip install hatch
+      - run: pip install click==8.2.1 hatch
       - run: hatch run docs:deploy
