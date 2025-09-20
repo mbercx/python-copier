@@ -7,10 +7,11 @@ Template for Python packages based on [`copier`](https://copier.readthedocs.io/e
 ## Features
 
 * 📦 **Package management**: Test, build, and deploy your package with [Hatch](https://hatch.pypa.io/) environments.
-*  📚 **Documentation**: Use [MyST](https://mystmd.org/) or [MkDocs](https://www.mkdocs.org/) to document your package.
+* 📚 **Documentation**: Document your package in [MyST](https://mystmd.org/) or [MkDocs](https://www.mkdocs.org/).
 * 🧹 **Pre-commit**: Format and lint your code with [Ruff](https://docs.astral.sh/ruff/).
 * ⚙️ **GitHub Actions**:
-    * Deploy your documentation on [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+    * Deploy documentation to [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+    * Run pre-commit checks on every pull request.
 
 ## Usage
 
