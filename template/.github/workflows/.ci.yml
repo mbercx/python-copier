@@ -14,7 +14,9 @@ jobs:
           python-version: '3.13'
 
       - name: Install Hatch
-        run: pip install click==8.2.1 hatch
+        run: |
+          pip install click==8.2.1 hatch
+          hatch env prune
 
       - name: Run pre-commit
         run: hatch run precommit:run
