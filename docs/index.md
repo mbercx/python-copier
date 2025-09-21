@@ -9,7 +9,7 @@ A `copier`-based template for Python packages.
 * 🧹 **Pre-commit**: Format and lint your code with [Ruff](https://docs.astral.sh/ruff/).
 * ⚙️ **GitHub Actions**:
     * Deploy documentation to [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
-    * Run pre-commit checks on every pull request.
+    * Run pre-commit checks and tests on every pull request.
 
 ## Usage
 

@@ -18,3 +18,17 @@ jobs:
 
       - name: Run pre-commit
         run: hatch run precommit:run
+
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.13']
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install click==8.1.8 hatch
+      - run: hatch run tests:run
