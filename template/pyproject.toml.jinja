@@ -49,6 +49,10 @@ dependencies = ["pre-commit"]
 scripts.install = "pre-commit install"
 scripts.run = "pre-commit run {args:--all-files}"
 
+[tool.hatch.envs.tests]
+dependencies = ["pytest"]
+scripts.run = "pytest {args}"
+
 [tool.ruff]
 lint.ignore = [
     "TRY003",  # https://docs.astral.sh/ruff/rules/raise-vanilla-args/

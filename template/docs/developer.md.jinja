@@ -51,3 +51,10 @@ And the following rules for the files in the `tests` directory:
 | --------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `INP001`  | [implicit-namespace-package](https://docs.astral.sh/ruff/rules/implicit-namespace-package/)                               | When tests are not part of the package, there is no need for `__init__.py` files.                                                   |
 | `S101`    | [assert](https://docs.astral.sh/ruff/rules/assert/)                                                                       | Asserts should not be used in production environments, but are fine for tests.                                                      |
+
+### Tests
+
+Tests are written using the [`pytest` package](https://docs.pytest.org/en/stable/index.html).
+They can be run using:
+
+    hatch run tests:run
