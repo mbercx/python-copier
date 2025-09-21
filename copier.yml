@@ -27,3 +27,5 @@ doc_deploy:
 _subdirectory: template
 _message_after_copy: |
   The `{{package_name}}` package has been created successfully!
+_exclude:
+    - "{% if _copier_operation == 'update' -%}tests{% endif %}"
