@@ -19,9 +19,12 @@ docs:
 doc_deploy:
   type: str
   help: 'Where do you want to deploy your documentation?'
-  choices:
+  choices: |
     - nowhere
     - github
+    {%- if docs == 'mkdocs' %}
+    - rtd
+    {%- endif %}
   default: nowhere
 
 _subdirectory: template

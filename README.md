@@ -10,7 +10,7 @@ Template for Python packages based on [`copier`](https://copier.readthedocs.io/e
 * 📚 **Documentation**: Document your package in [MyST](https://mystmd.org/) or [MkDocs](https://www.mkdocs.org/).
 * 🧹 **Pre-commit**: Format and lint your code with [Ruff](https://docs.astral.sh/ruff/).
 * ⚙️ **GitHub Actions**:
-    * Deploy documentation to [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+    * Deploy documentation to [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) or [Read the Docs](https://about.readthedocs.com/).
     * Run pre-commit checks and tests on every pull request.
 
 ## Usage
