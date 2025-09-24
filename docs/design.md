@@ -76,7 +76,7 @@ Good development standards make for better code.
 
 ### Commit messages
 
-> A well-cared for log is a beautiful and useful thing
+> A well-cared for (commit) log is a beautiful and useful thing
 
 This quote comes from the following article, which should be considered a mandatory read for anyone maintaining a package:
 
@@ -92,6 +92,26 @@ The summary, slightly adapted by personal preferences (indicated in boldface):
 * [Use the body to explain what and why vs. how](https://cbea.ms/git-commit/#why-not-how).
 
 In addition, try to make [atomic commits](https://www.freshconsulting.com/insights/blog/atomic-commits/) when possible.
+We've also taken inspiration from the [MyST parser contribution guide](https://github.com/executablebooks/MyST-Parser?tab=contributing-ov-file#commit-messages).[^1] 
+
+[^1]: Shoutout to my boi [Chris Sewell](https://github.com/chrisjsewell). The man, the legend. The quintessential British b***ard.
+
+Here is an example of the desired format for a commit message:
+
+```
+<EMOJI> <SCOPE>: Summarize changes in 72 characters or less
+
+More detailed explanatory text, if necessary. Explain the problem that this
+commit is solving. Focus on what you are changing, why you are making this
+change and why you chose your approach, as opposed to how the change was made
+(the code and comments should explain that). Are there side effects or other
+unintuitive consequences of this change? Here's the place to explain the
+context of your commit to someone else reading your message in the future
+(most likely you).
+
+PS: There is no need to mention you also added unit tests when adding a new
+    feature. The code diff already makes this clear.
+```
 
 #### Specifying the type of change
 
