@@ -144,14 +144,17 @@ Some advantages:
     Although we are in favor of using emojis in the subject line, we do **not** allow emojis in the body.
     This makes it easier to `grep` for commit types.
 
+The list in the table below is in order of priority, e.g. a backwards-incompatible change might improve an existing feature by breaking its API, but should _not_ be typed as an improvement (👌).
+Similarly, if a dependency is changed, it's convenient to quickly spot this, e.g. when updating a conda feedstock.
+
 | Emoji | Meaning                                                          | Similar to [Angular type](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) | In changelog summary?  |
 | ----- | ---------------------------------------------------------------- | ----------------------------------------- | ------------------------- |
 | 💥    | introduce a backward-incompatible (breaking) change / remove deprecated code | `\<type>!` (use `!` + `BREAKING CHANGE:`) | **Yes**                   |
+| 📦    | add, update or change a dependency                                    | `build`                                   | **Yes**                   |
 | ✨    | introduce new features                                           | `feat`                                    | **Yes**                   |
 | 👌    | improve an existing code/feature (no breaking)                   | `perf`/`feat`                             | **Yes**                   |
 | 🐛    | fix a code bug                                                   | `fix`                                     | **Yes**                   |
 | ❌    | mark code as deprecated (note removal version/replacement)       | `refactor`                                | **Yes**                   |
-| 📦    | update or change a dependency                                    | `build`                                   | **Yes**                   |
 | 📚    | add or adapt documentation                                       | `docs`                                    | No                        |
 | 🔄    | refactor existing code with no behavior change                   | `refactor`                                | No                        |
 | 🧪    | add or adapt tests                                               | `test`                                    | No                        |
