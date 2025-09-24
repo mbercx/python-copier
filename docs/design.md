@@ -119,7 +119,7 @@ PS: There is no need to mention you also added unit tests when adding a new
 
     The stipulations below are based on experience, but are still evolving.
     This text is mainly here to provide a starting point for discussion with collaborators.
-    TODO: Look into [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) and see if we want to use/adapt their specification.
+    <!-- TODO: Look into [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) and see if we want to use/adapt their specification. -->
 
 Specifying the type of change in a commit can be useful for several reasons:
 
@@ -167,6 +167,7 @@ Some advantages:
     We are aware of other standards like [GitMoji](https://gitmoji.dev/), but limit the number in order to avoid choice overload.
     Too many options make it difficult for contributors to know all of them, makes changelogs too fragmented and leads to decision paralysis.
     Moreover, we avoid emojis that typically have width issues in some terminals.
+    <!-- TODO: Also look into and add reference to https://github.com/ahmadawais/Emoji-Log -->
 
 !!!note
 
