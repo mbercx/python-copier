@@ -21,39 +21,53 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
 ]
 
+[project.optional-dependencies]
+docs = [
+{% if docs == 'myst'-%}
+  "mystmd"
+{%- endif -%}
+{%- if docs == 'mkdocs' -%}
+  "mkdocs",
+  "mkdocs-material"
+{%- endif %}
+]
+tests = [
+  "pytest"
+]
+pre-commit = [
+  "pre-commit"
+]
+
+[dependency-groups]
+dev = [
+  "{{package_name}}[docs,tests,pre-commit]",
+]
+
 [tool.hatch.version]
 path = "src/{{ package_name.lower().replace('-', '_') }}/__about__.py"
 
 [tool.hatch.envs.default]
 installer = 'uv'
 
-{% if docs == 'myst'-%}
 [tool.hatch.envs.docs]
-dependencies = [
-  "mystmd"
-]
+features = ["docs"]
+{% if docs == 'myst'-%}
 scripts.build = "cd docs && myst build"
 scripts.serve = "cd docs && myst start"
 {%- endif -%}
-
 {%- if docs == 'mkdocs' -%}
-[tool.hatch.envs.docs]
-dependencies = [
-  "mkdocs",
-  "mkdocs-material"
-]
 scripts.build = "mkdocs build --clean --strict"
 scripts.serve = "mkdocs serve --dev-addr localhost:8000"
 scripts.deploy = "mkdocs gh-deploy --force"
 {%- endif %}
 
 [tool.hatch.envs.pre-commit]
-dependencies = ["pre-commit"]
+features = ["pre-commit"]
 scripts.install = "pre-commit install"
 scripts.run = "pre-commit run {args}"
 
 [tool.hatch.envs.hatch-test]
-dependencies = ["pytest"]
+features = ["tests"]
 randomize = false
 parallel = false
 run = "pytest {args}"
