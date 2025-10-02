@@ -13,7 +13,7 @@ scripts.install = [
 ]
 scripts.check = [
   "copier copy --vcs-ref=HEAD . .tmp/py-package -f",
-  "cd .tmp/py-package && hatch fmt -l --check",
+  "cd .tmp/py-package && hatch run precommit:run -av",
 ]
 scripts.clean = [
   "ruff clean",
