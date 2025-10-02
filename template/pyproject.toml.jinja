@@ -24,6 +24,9 @@ classifiers = [
 [tool.hatch.version]
 path = "src/{{ package_name.lower().replace('-', '_') }}/__about__.py"
 
+[tool.hatch.envs.default]
+installer = 'uv'
+
 {% if docs == 'myst'-%}
 [tool.hatch.envs.docs]
 dependencies = [
@@ -44,14 +47,19 @@ scripts.serve = "mkdocs serve --dev-addr localhost:8000"
 scripts.deploy = "mkdocs gh-deploy --force"
 {%- endif %}
 
-[tool.hatch.envs.precommit]
+[tool.hatch.envs.pre-commit]
 dependencies = ["pre-commit"]
 scripts.install = "pre-commit install"
-scripts.run = "pre-commit run {args:--all-files}"
+scripts.run = "pre-commit run {args}"
 
-[tool.hatch.envs.tests]
+[tool.hatch.envs.hatch-test]
 dependencies = ["pytest"]
-scripts.run = "pytest {args}"
+randomize = false
+parallel = false
+run = "pytest {args}"
+
+[[tool.hatch.envs.hatch-test.matrix]]
+python = ["3.9", "3.10", "3.11", "3.12", "3.13"]
 
 [tool.ruff]
 lint.ignore = [

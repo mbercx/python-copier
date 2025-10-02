@@ -27,6 +27,7 @@ Other scripts for the default environment:
 * `check`: Copy/Update the template in the `.tmp` directory and check the rendered files by linting them with `hatch fmt -l`.
 * `clean`: Remove the `.tmp` directory and any Ruff caches.
 * `install`: Copy/Update the template in the `.tmp` directory and install it with `uv pip install`.
+* `test`: Copy/Update the template in the `.tmp` directory run the test suite with `pytest`.
 
 ## Documentation
 
