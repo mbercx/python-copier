@@ -74,6 +74,12 @@ Good development standards make for better code.
 
 **Versioning**: We try to adhere to [SemVer](https://semver.org/).
 
+!!!note
+
+    The stipulations below are based on experience, but are still evolving.
+    This text is mainly here to provide a starting point for discussion with collaborators.
+    <!-- TODO: Look into [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) and see if we want to use/adapt their specification. -->
+
 ### Commit messages
 
 > A well-cared for (commit) log is a beautiful and useful thing
@@ -119,12 +125,6 @@ Is this really the best approach to solving the issue?
 If it's hard to explain the change, maybe it's a bad idea?
 
 #### Specifying the type of change
-
-!!!note
-
-    The stipulations below are based on experience, but are still evolving.
-    This text is mainly here to provide a starting point for discussion with collaborators.
-    <!-- TODO: Look into [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) and see if we want to use/adapt their specification. -->
 
 Specifying the type of change in a commit can be useful for several reasons:
 
