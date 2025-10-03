@@ -5,3 +5,9 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - footnotes
+
+nav:
+  - index.md
+  - design.md
+  - dev-standards.md
+  - developer.md
