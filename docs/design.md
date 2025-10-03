@@ -99,7 +99,7 @@ We've also taken inspiration from the [MyST parser contribution guide](https://g
 Here is an example of the desired format for a commit message:
 
 ```
-<EMOJI> <SCOPE>: Summarize changes in 72 characters or less
+<TYPE-EMOJI> <SCOPE>: Summarize changes in 72 characters or less
 
 More detailed explanatory text, if necessary. Explain the problem that this
 commit is solving. Focus on what you are changing, why you are making this
@@ -141,7 +141,7 @@ Some advantages:
 
 !!! important
 
-    Although we are in favor of using emojis in the subject line, we do **not** allow emojis in the body.
+    Although we are in favor of using leading emojis to indicate the type, we do **not** allow emojis further down the subject line.
     This makes it easier to `grep` for commit types.
 
 The list in the table below is in order of priority, e.g. a backwards-incompatible change might improve an existing feature by breaking its API, but should _not_ be typed as an improvement (👌).
@@ -182,12 +182,14 @@ Similarly, if a dependency is changed, it's convenient to quickly spot this, e.g
         
         We haven't needed to use much tooling so far, and built our own for e.g. the changelog.
 
-        > Search/grep is harder.
+        > Search/`grep` is harder.
         
-        You can grep for emojis too!
-        Moreover, the body of the commit should not contain any emojis, so it's quite easy to look for commit types:
+        You can `grep` for emojis too!
+        In fact, it's _easier_ to exclusively find the commits you are looking for:
 
-            git log | grep '[💥✨👌🐛❌📦]'
+            git log --oneline | grep '[💥✨👌🐛❌📦]'
+
+        Using e.g. `test` to `grep` for the type will likely also find commits of other types.
 
         > Accessibility / screen readers read ‘sparkles’
         
