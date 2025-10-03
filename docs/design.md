@@ -113,6 +113,11 @@ PS: There is no need to mention you also added unit tests when adding a new
     feature. The code diff already makes this clear.
 ```
 
+Besides being an invaluable resources for future maintainers, writing a commit message forces you to explain your change.
+It forces you to stop and think again.
+Is this really the best approach to solving the issue?
+If it's hard to explain the change, maybe it's a bad idea?
+
 #### Specifying the type of change
 
 !!!note
