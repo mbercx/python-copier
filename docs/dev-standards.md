@@ -145,3 +145,21 @@ Similarly, if a dependency is changed, it's convenient to quickly spot this, e.g
 
         The icon is metadata, not decoration.
         It improves triage and doesn’t replace clear subjects/bodies.
+
+## Collaboration on GitHub
+
+### Review process
+
+1. **Don't update the branch with merges, rebase instead.**
+   This makes the branches easier to understand, avoids merge commits (evil!), and allows for squashing commits as desired.
+2. **Keep commits clean and as desired for the final PR merge.**
+   Adding commit after commit means the PR has to be reviewed in its entirety.
+   This is fine for smaller changes, but for more complicated PRs you should try to split up the relevant changes in atomic commits that deal with a single type/scope.
+   Keeping commits isolated and clean makes review easier, since each change can be reviewed in isolation, along with the explanation in the commit message.
+   Exceptions here are changes based on review, see the next point.
+3. **Keep changes based on review in a single separate commit.**
+   After you are done with processing a review, you ping the reviewer again to see if they are happy with your updates.
+   However, how will they know what you have changed?
+   If you simply integrate the changes in the final commits, as described above, they can't isolate what you have changed based on their review.
+   If you add 10 more commits, it still is difficult to see what you changed in one view.
+   By keeping all the changes made based on a review in a single commit, you make subsequent review easier and faster.
