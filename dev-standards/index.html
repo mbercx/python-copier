@@ -1,0 +1,777 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../design/">
+      
+      
+        <link rel="next" href="../semantics/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Development standards - Python copier</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#development-standards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python copier" class="md-header__button md-logo" aria-label="Python copier" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python copier
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Development standards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python copier" class="md-nav__button md-logo" aria-label="Python copier" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python copier
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Development standards
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development standards
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#commit-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commit messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-the-type-of-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specifying the type of change
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collaboration-on-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collaboration on GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collaboration on GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Semantics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Developer Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#commit-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commit messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-the-type-of-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specifying the type of change
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collaboration-on-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collaboration on GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collaboration on GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="development-standards">Development standards</h1>
+<p>Good development standards make for better code.</p>
+<p><strong>Versioning</strong>: We try to adhere to <a href="https://semver.org/">SemVer</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The stipulations below are based on experience, but are still evolving.
+This text is mainly here to provide a starting point for discussion with collaborators.
+<!-- TODO: Look into <a href="https://www.conventionalcommits.org/en/v1.0.0/#specification">Conventional commits</a> and see if we want to use/adapt their specification. --></p>
+</div>
+<h2 id="commit-messages">Commit messages</h2>
+<blockquote>
+<p>A well-cared for (commit) log is a beautiful and useful thing</p>
+</blockquote>
+<p>This quote comes from the following article, which should be considered a mandatory read for anyone maintaining a package:</p>
+<p><a href="https://cbea.ms/git-commit/">https://cbea.ms/git-commit/</a></p>
+<p>The summary, slightly adapted by personal preferences (indicated in boldface):</p>
+<ul>
+<li><a href="https://cbea.ms/git-commit/#separate">Separate subject/title from body with a blank line</a>.</li>
+<li><a href="https://cbea.ms/git-commit/#limit-50">Limit the subject line to 50 characters</a> <strong>if possible, 72 is a hard limit</strong>.</li>
+<li><a href="https://cbea.ms/git-commit/#capitalize">Capitalize the subject line</a> and <a href="https://cbea.ms/git-commit/#end">do not end it with a period</a>.</li>
+<li><a href="https://cbea.ms/git-commit/#imperative">Use the imperative mood in the subject line</a>.</li>
+<li><a href="https://cbea.ms/git-commit/#wrap-72">Wrap the body at</a> <strong>88 characters</strong>.</li>
+<li><a href="https://cbea.ms/git-commit/#why-not-how">Use the body to explain what and why vs. how</a>.</li>
+</ul>
+<p>In addition, try to make <a href="https://www.freshconsulting.com/insights/blog/atomic-commits/">atomic commits</a> when possible.
+We've also taken inspiration from the <a href="https://github.com/executablebooks/MyST-Parser?tab=contributing-ov-file#commit-messages">MyST parser contribution guide</a>.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> </p>
+<p>Here is an example of the desired format for a commit message:</p>
+<pre><code>&lt;TYPE-EMOJI&gt; &lt;SCOPE&gt;: Summarize changes in 72 characters or less
+
+More detailed explanatory text, if necessary. Explain the problem that this
+commit is solving. Focus on what you are changing, why you are making this
+change and why you chose your approach, as opposed to how the change was made
+(the code and comments should explain that). Are there side effects or other
+unintuitive consequences of this change? Here's the place to explain the
+context of your commit to someone else reading your message in the future
+(most likely you).
+
+PS: There is no need to mention you also added unit tests when adding a new
+    feature. The code diff already makes this clear.
+</code></pre>
+<p>Besides being an invaluable resources for future maintainers, writing a commit message forces you to explain your change.
+It forces you to stop and think again.
+Is this really the best approach to solving the issue?
+If it's hard to explain the change, maybe it's a bad idea?</p>
+<h3 id="specifying-the-type-of-change">Specifying the type of change</h3>
+<p>Specifying the type of change in a commit can be useful for several reasons:</p>
+<ul>
+<li>Understanding the changes of a commit.</li>
+<li>Where to (automatically) put the commit in the changelog, if at all.</li>
+<li>What to include in a support branch for a previous major release.</li>
+<li>Encouraging atomic commits.</li>
+<li>What the priority should be when reviewing open PRs. </li>
+</ul>
+<p>We use <strong>exactly one leading</strong> emoji per commit to indicate the type of change.
+Some advantages:</p>
+<ul>
+<li>Only a single character needed!
+  Save precious space in the subject line.</li>
+<li>A clear visual indicator of the type of change.</li>
+<li>Clearly separates type from scope/content.</li>
+<li>Language-agnostic.</li>
+<li>They look great. At least on macOS.</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Although we are in favor of using leading emojis to indicate the type, we do <strong>not</strong> allow emojis further down the subject line.
+This makes it easier to <code>grep</code> for commit types.</p>
+</div>
+<p>The list in the table below is in order of priority, e.g. a backwards-incompatible change might improve an existing feature by breaking its API, but should <em>not</em> be typed as an improvement (👌).
+Similarly, if a dependency is changed, it's convenient to quickly spot this, e.g. when updating a conda feedstock.</p>
+<table>
+<thead>
+<tr>
+<th>Emoji</th>
+<th>Meaning</th>
+<th>Similar to <a href="https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines">Angular type</a></th>
+<th>In changelog summary?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>💥</td>
+<td>introduce a backward-incompatible (breaking) change / remove deprecated code</td>
+<td><code>\&lt;type&gt;!</code> (use <code>!</code> + <code>BREAKING CHANGE:</code>)</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>📦</td>
+<td>add, update or change a dependency</td>
+<td><code>build</code></td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>✨</td>
+<td>introduce new features</td>
+<td><code>feat</code></td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>👌</td>
+<td>improve an existing code/feature (no breaking)</td>
+<td><code>perf</code>/<code>feat</code></td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>🐛</td>
+<td>fix a code bug</td>
+<td><code>fix</code></td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>❌</td>
+<td>mark code as deprecated (note removal version/replacement)</td>
+<td><code>refactor</code></td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td>📚</td>
+<td>add or adapt documentation</td>
+<td><code>docs</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>🔄</td>
+<td>refactor existing code with no behavior change</td>
+<td><code>refactor</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>🧪</td>
+<td>add or adapt tests</td>
+<td><code>test</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>🚀</td>
+<td>bump the package version for release</td>
+<td><code>chore</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>🧹</td>
+<td>clean up comments / small formatting</td>
+<td><code>style</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>⏪</td>
+<td>revert a previous commit</td>
+<td><code>revert</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>🔧</td>
+<td>devops-related changes (pre-commit, CI/CD, etc.)</td>
+<td><code>ci</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>🐭</td>
+<td>minor changes (typos etc.; exclude from changelog)</td>
+<td><code>chore</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>❓</td>
+<td>anything not covered above (last resort)</td>
+<td><code>chore</code></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are aware of other standards like <a href="https://gitmoji.dev/">GitMoji</a>, but limit the number in order to avoid choice overload.
+Too many options make it difficult for contributors to know all of them, makes changelogs too fragmented and leads to decision paralysis.
+Moreover, we avoid emojis that typically have width issues in some terminals.
+<!-- TODO: Also look into and add reference to https://github.com/ahmadawais/Emoji-Log --></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not everyone likes emojis. In the dropdown below you can find some common concerns.</p>
+<details>
+<summary>Common concerns</summary>
+<blockquote>
+<p>Tooling can’t parse emojis.</p>
+</blockquote>
+<p>We haven't needed to use much tooling so far, and built our own for e.g. the changelog.</p>
+<blockquote>
+<p>Search/<code>grep</code> is harder.</p>
+</blockquote>
+<p>You can <code>grep</code> for emojis too!
+In fact, it's <em>easier</em> to exclusively find the commits you are looking for:</p>
+<pre><code>git log --oneline | grep '[💥✨👌🐛❌📦]'
+</code></pre>
+<p>Using e.g. <code>test</code> to <code>grep</code> for the type will likely also find commits of other types.</p>
+<blockquote>
+<p>Accessibility / screen readers read ‘sparkles’</p>
+</blockquote>
+<p>This is a fair point.
+In case we start working with collaborators that rely on such tools we will adapt.</p>
+<blockquote>
+<p>Rendering/width issues in some terminals.</p>
+</blockquote>
+<p>We selected emojis with default emoji presentation (no variation selector), which render correctly in modern terminals.</p>
+<blockquote>
+<p>Ambiguity / overchoice</p>
+</blockquote>
+<p>This just depends on conventions.
+You can have <em>more</em> ASCII keywords to choose from. If we keep a small, fixed set, like the one above, this is not an issue.</p>
+<blockquote>
+<p>Not serious/professional.</p>
+</blockquote>
+<p>The icon is metadata, not decoration.
+It improves triage and doesn’t replace clear subjects/bodies.</p>
+</details>
+</div>
+<h2 id="collaboration-on-github">Collaboration on GitHub</h2>
+<h3 id="review-process">Review process</h3>
+<ol>
+<li><strong>Don't update the branch with merges, rebase instead.</strong>
+   This makes the branches easier to understand, avoids merge commits (evil!), and allows for squashing commits as desired.</li>
+<li><strong>Keep commits clean and as desired for the final PR merge.</strong>
+   Adding commit after commit means the PR has to be reviewed in its entirety.
+   This is fine for smaller changes, but for more complicated PRs you should try to split up the relevant changes in atomic commits that deal with a single type/scope.
+   Keeping commits isolated and clean makes review easier, since each change can be reviewed in isolation, along with the explanation in the commit message.
+   Exceptions here are changes based on review, see the next point.</li>
+<li><strong>Keep changes based on review in a single separate commit.</strong>
+   After you are done with processing a review, you ping the reviewer again to see if they are happy with your updates.
+   However, how will they know what you have changed?
+   If you simply integrate the changes in the final commits, as described above, they can't isolate what you have changed based on their review.
+   If you add 10 more commits, it still is difficult to see what you changed in one view.
+   By keeping all the changes made based on a review in a single commit, you make subsequent review easier and faster.</li>
+</ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Shoutout to my boi <a href="https://github.com/chrisjsewell">Chris Sewell</a>. The man, the legend. The quintessential British b***ard.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
