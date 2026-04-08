@@ -208,3 +208,6 @@ __marimo__/
 
 # Temporary directory for testing via hatch
 .tmp/
+
+# Local repo files
+local/
