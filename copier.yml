@@ -3,11 +3,6 @@ package_name:
   help: 'What is the name of your Python package?'
   default: '{{_folder_name }}'
 
-description:
-  type: str
-  help: 'Describe what your Python package is for.'
-  default: 'Python package'
-
 docs:
   type: str
   help: 'Which documentation engine do you prefer?'
