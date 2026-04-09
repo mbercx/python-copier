@@ -13,6 +13,7 @@ A `copier`-based template for Python packages.
 * ⚙️ **GitHub Actions**:
     * Deploy documentation to [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) or [Read the Docs](https://about.readthedocs.com/).
     * Run pre-commit checks and tests on every pull request.
+    * Publish to [PyPI](https://pypi.org/) on `vX.Y.Z` tags via [Trusted Publishing](https://docs.pypi.org/trusted-publishers/) — no API tokens.
 
 ## Usage
 
@@ -28,6 +29,13 @@ And answer the questions to generate a new Python package.
 ## Next steps
 
 After copying the template, you might still have to do some additional configuration.
+
+### Publish to PyPI
+
+The generated package ships with a `cd.yaml` workflow that publishes to PyPI on `vX.Y.Z` tag pushes via [Trusted Publishing](https://docs.pypi.org/trusted-publishers/).
+See [Publishing to PyPI](publishing.md) for the one-time setup steps.
+
+You don't have to publish right away, but if you care about the project name, push an early `0.0.1` release to claim it on PyPI before someone else does.
 
 ### Deploy documentation
 

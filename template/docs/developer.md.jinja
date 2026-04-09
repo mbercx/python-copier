@@ -355,3 +355,37 @@ And the following rules for the files in the `tests` directory:
 | --------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `INP001`  | [implicit-namespace-package](https://docs.astral.sh/ruff/rules/implicit-namespace-package/)                               | When tests are not part of the package, there is no need for `__init__.py` files.                                                   |
 | `S101`    | [assert](https://docs.astral.sh/ruff/rules/assert/)                                                                       | Asserts should not be used in production environments, but are fine for tests.                                                      |
+
+## Release
+
+{% if docs == 'myst' -%}
+:::{important}
+Before the **first** release works, the repository has to be registered as a PyPI [Trusted Publisher](https://docs.pypi.org/trusted-publishers/) and a `pypi` GitHub environment has to exist.
+See the [`python-copier` first-publication guide](https://mbercx.github.io/python-copier/publishing/) for that one-time setup — you only do it once per project.
+:::
+{%- endif %}
+{%- if docs == 'mkdocs' %}
+!!! important
+    Before the **first** release works, the repository has to be registered as a PyPI [Trusted Publisher](https://docs.pypi.org/trusted-publishers/) and a `pypi` GitHub environment has to exist.
+    See the [`python-copier` first-publication guide](https://mbercx.github.io/python-copier/publishing/) for that one-time setup — you only do it once per project.
+{%- endif %}
+
+Releases of `{{ package_name }}` are cut by pushing a `vX.Y.Z` tag to GitHub.
+The `cd` workflow under `.github/workflows/cd.yaml` then builds an sdist and wheel with Hatch and publishes them to PyPI.
+
+1. Bump the version in `src/{{ package_name }}/__about__.py` to the new release version.
+   The easiest way is:
+
+        hatch version <new-version>
+
+   Commit the bump on `main` (e.g. via a PR).
+
+2. Tag the bump commit and push the tag:
+
+        git tag -a v<new-version> -m '🚀 Release v<new-version>'
+        git push origin v<new-version>
+
+3. The `cd` workflow picks up the tag, builds the distributions, and publishes them to PyPI.
+
+The git tag and the version in `__about__.py` must agree.
+PyPI only sees the version baked into the built distribution, so a mismatch will silently publish under the wrong version (or be rejected as a duplicate of an existing release), and re-tagging after the fact is awkward.
