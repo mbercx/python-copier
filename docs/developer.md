@@ -51,4 +51,4 @@ And then push the tag to the remote, here named `origin`:
 
     git push origin --tags
 
-You can the go to the [Github releases](https://github.com/mbercx/python-copier/releases) and make a new release based on the new tag.
+You can then go to the [Github releases](https://github.com/mbercx/python-copier/releases) and make a new release based on the new tag.

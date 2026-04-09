@@ -5,7 +5,7 @@ Good development standards make for better code.
 
 **Versioning**: We try to adhere to [SemVer](https://semver.org/).
 
-!!!note
+!!! note
 
     The stipulations below are based on experience, but are still evolving.
     This text is mainly here to provide a starting point for discussion with collaborators.
@@ -103,14 +103,14 @@ Similarly, if a dependency is changed, it's convenient to quickly spot this, e.g
 | 🐭    | minor changes (typos etc.; exclude from changelog)               | `chore`                                   | No                        |
 | ❓    | anything not covered above (last resort)                         | `chore`                                   | No                        |
 
-!!!note
+!!! note
 
     We are aware of other standards like [GitMoji](https://gitmoji.dev/), but limit the number in order to avoid choice overload.
     Too many options make it difficult for contributors to know all of them, makes changelogs too fragmented and leads to decision paralysis.
     Moreover, we avoid emojis that typically have width issues in some terminals.
     <!-- TODO: Also look into and add reference to https://github.com/ahmadawais/Emoji-Log -->
 
-!!!note
+!!! note
 
     Not everyone likes emojis. In the dropdown below you can find some common concerns.
 
