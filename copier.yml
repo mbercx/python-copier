@@ -37,3 +37,6 @@ _message_after_copy: |
 _exclude:
     - "{% if _copier_operation == 'update' -%}tests{% endif %}"
     - "{% if _copier_operation == 'update' -%}CHANGELOG.md{% endif %}"
+    - "{% if _copier_operation == 'update' -%}README.md{% endif %}"
+    - "{% if _copier_operation == 'update' -%}docs/index.md{% endif %}"
+    - "{% if _copier_operation == 'update' -%}src/{{ package_name.lower().replace('-', '_') }}/__init__.py{% endif %}"
