@@ -36,6 +36,10 @@ tests = [
 ]
 pre-commit = [
   "pre-commit"
+{%- if type_check != 'none' -%}
+  ,
+  "mypy"
+{%- endif %}
 ]
 
 [dependency-groups]
@@ -86,3 +90,18 @@ lint.ignore = [
 ]
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = ["INP001", "S101"]
+{%- if type_check == 'loose' %}
+
+[tool.mypy]
+python_version = "3.10"
+files = ["src"]
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unreachable = true
+{%- elif type_check == 'strict' %}
+
+[tool.mypy]
+python_version = "3.10"
+files = ["src"]
+strict = true
+{%- endif %}

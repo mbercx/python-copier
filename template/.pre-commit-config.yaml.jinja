@@ -9,3 +9,14 @@ repos:
       - id: ruff-format
         name: Format with Ruff
         types_or: [ python, pyi ]
+{% if type_check != 'none' %}
+  - repo: local
+    hooks:
+      - id: mypy
+        name: Type-check with mypy
+        entry: mypy
+        language: system
+        types: [ python ]
+        require_serial: true
+        files: ^src/
+{% endif -%}

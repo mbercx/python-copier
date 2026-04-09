@@ -22,6 +22,15 @@ doc_deploy:
     {%- endif %}
   default: nowhere
 
+type_check:
+  type: str
+  help: 'How strict should type checking be?'
+  choices:
+    - none
+    - loose
+    - strict
+  default: loose
+
 _subdirectory: template
 _message_after_copy: |
   The `{{package_name}}` package has been created successfully!
