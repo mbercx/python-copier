@@ -36,3 +36,4 @@ _message_after_copy: |
   The `{{package_name}}` package has been created successfully!
 _exclude:
     - "{% if _copier_operation == 'update' -%}tests{% endif %}"
+    - "{% if _copier_operation == 'update' -%}CHANGELOG.md{% endif %}"
