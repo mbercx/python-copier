@@ -83,21 +83,23 @@ Some advantages:
 The list in the table below is in order of priority, e.g. a backwards-incompatible change might improve an existing feature by breaking its API, but should _not_ be typed as an improvement (👌).
 Similarly, if a dependency is changed, it's convenient to quickly spot this, e.g. when updating a conda feedstock.
 
-| Emoji | Meaning                                                          | Similar to [Angular type](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) | In changelog summary?  |
+| Emoji | Meaning                                                          | Similar to [Angular type](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) | Changelog              |
 | ----- | ---------------------------------------------------------------- | ----------------------------------------- | ------------------------- |
-| 💥    | introduce a backward-incompatible (breaking) change / remove deprecated code | `\<type>!` (use `!` + `BREAKING CHANGE:`) | **Yes**                   |
-| 📦    | add, update or change a dependency                                    | `build`                                   | **Yes**                   |
-| ✨    | introduce new features                                           | `feat`                                    | **Yes**                   |
-| 👌    | improve an existing code/feature (no breaking)                   | `perf`/`feat`                             | **Yes**                   |
-| 🐛    | fix a code bug                                                   | `fix`                                     | **Yes**                   |
-| ❌    | mark code as deprecated (note removal version/replacement)       | `refactor`                                | **Yes**                   |
-| 📚    | add or adapt documentation                                       | `docs`                                    | No                        |
-| 🔄    | refactor existing code with no behavior change                   | `refactor`                                | No                        |
-| 🧪    | add or adapt tests                                               | `test`                                    | No                        |
+| 💥    | introduce a backward-incompatible (breaking) change / remove deprecated code | `\<type>!` (use `!` + `BREAKING CHANGE:`) | Breaking changes          |
+| 📦    | add, update or change a dependency                                    | `build`                                   | Dependency updates        |
+| ❌    | mark code as deprecated (note removal version/replacement)       | `refactor`                                | Deprecations              |
+| ✨    | introduce new features                                           | `feat`                                    | New features              |
+| 👌    | improve an existing code/feature (no breaking)                   | `perf`/`feat`                             | Improvements              |
+| 🐛    | fix a code bug                                                   | `fix`                                     | Bug fixes                 |
+|       | **Developer-facing**                                             |                                           |                           |
+| 📚    | add or adapt documentation                                       | `docs`                                    | Developer                 |
+| 🔄    | refactor existing code with no behavior change                   | `refactor`                                | Developer                 |
+| 🧪    | add or adapt tests                                               | `test`                                    | Developer                 |
+| ⏪    | revert a previous commit                                         | `revert`                                  | Developer                 |
+| 🔧    | devops-related changes (pre-commit, CI/CD, etc.)                 | `ci`                                      | Developer                 |
+| 🧹    | clean up comments / small formatting                             | `style`                                   | Developer                 |
+|       | **Excluded**                                                     |                                           |                           |
 | 🚀    | bump the package version for release                             | `chore`                                   | No                        |
-| 🧹    | clean up comments / small formatting                             | `style`                                   | No                        |
-| ⏪    | revert a previous commit                                         | `revert`                                  | No                        |
-| 🔧    | devops-related changes (pre-commit, CI/CD, etc.)                 | `ci`                                      | No                        |
 | 🐭    | minor changes (typos etc.; exclude from changelog)               | `chore`                                   | No                        |
 | ❓    | anything not covered above (last resort)                         | `chore`                                   | No                        |
 
