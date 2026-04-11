@@ -8,6 +8,7 @@ Template for Python packages based on [`copier`](https://copier.readthedocs.io/e
 
 * 📦 **Package management**:
     - Develop with your preferred tools (extras, [`uv`](https://docs.astral.sh/uv/) or [Hatch](https://hatch.pypa.io/)).
+    - Automatic changelog generation from emoji-typed commit messages.
     - Build your package with [Hatch](https://hatch.pypa.io/). 
 * 🧹 [**Pre-commit**](https://pre-commit.com/): Format and lint your code with [Ruff](https://docs.astral.sh/ruff/).
 * 🧪 **Tests**: Write tests with [`pytest`](https://docs.pytest.org/en/stable/), with optional coverage reporting (basic summary or [Codecov](https://about.codecov.io/) integration).
