@@ -1,0 +1,67 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install Hatch
+        run: pip install hatch
+
+      - name: Run pre-commit
+        run: hatch run pre-commit:run --all-files
+
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.14']
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
+      - run: pip install hatch
+{%- if coverage == 'none' %}
+      - run: hatch test
+{%- else %}
+      - run: hatch test --cover --cover-min 50
+
+      - name: Install coverage
+        if: '!cancelled()'
+        run: pip install coverage[toml]
+
+      - name: Coverage summary
+        if: '!cancelled()'
+        run: |
+          echo '## Test Coverage' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          coverage report >> $GITHUB_STEP_SUMMARY 2>&1 || true
+          echo '```' >> $GITHUB_STEP_SUMMARY
+{%- endif %}
+{%- if coverage == 'codecov' %}
+
+      - name: Generate coverage XML
+        if: '!cancelled()'
+        run: coverage xml || true
+
+      - name: Upload coverage to Codecov
+        if: '!cancelled()'
+        uses: codecov/codecov-action@v5
+        with:
+          files: coverage.xml
+          fail_ci_if_error: false
+{%- endif %}

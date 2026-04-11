@@ -82,6 +82,15 @@ run = "pytest {args}"
 
 [[tool.hatch.envs.hatch-test.matrix]]
 python = ["3.10", "3.11", "3.12", "3.13", "3.14"]
+{%- if coverage != 'none' %}
+
+[tool.coverage.run]
+source = ["{{ package_name.lower().replace('-', '_') }}"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+{%- endif %}
 
 [tool.ruff]
 lint.ignore = [

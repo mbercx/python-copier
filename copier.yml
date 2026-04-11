@@ -31,6 +31,15 @@ type_check:
     - strict
   default: loose
 
+coverage:
+  type: str
+  help: 'What level of test coverage reporting do you want?'
+  choices:
+    - none
+    - basic
+    - codecov
+  default: none
+
 _subdirectory: template
 _message_after_copy: |
   The `{{package_name}}` package has been created successfully!

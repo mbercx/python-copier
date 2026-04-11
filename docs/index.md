@@ -8,7 +8,7 @@ A `copier`-based template for Python packages.
     - Develop with your preferred tools (extras, [`uv`](https://docs.astral.sh/uv/) or [Hatch](https://hatch.pypa.io/)).
     - Build your package with [Hatch](https://hatch.pypa.io/). 
 * 🧹 [**Pre-commit**](https://pre-commit.com/): Format and lint your code with [Ruff](https://docs.astral.sh/ruff/).
-* 🧪 **Tests**: Write tests with [`pytest`](https://docs.pytest.org/en/stable/).
+* 🧪 **Tests**: Write tests with [`pytest`](https://docs.pytest.org/en/stable/), with optional coverage reporting (basic summary or [Codecov](https://about.codecov.io/) integration).
 * 📚 **Documentation**: Write docs in [MyST](https://mystmd.org/) or [MkDocs](https://www.mkdocs.org/).
 * ⚙️ **GitHub Actions**:
     * Deploy documentation to [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) or [Read the Docs](https://about.readthedocs.com/).

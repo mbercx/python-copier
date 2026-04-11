@@ -19,6 +19,10 @@ scripts.test = [
   "copier copy --vcs-ref=HEAD . .tmp/py-package -f",
   "cd .tmp/py-package && hatch test -v -- -s",
 ]
+scripts.test-cov = [
+  "copier copy --vcs-ref=HEAD . .tmp/py-package -f",
+  "cd .tmp/py-package && hatch test --cover -v -- -s",
+]
 scripts.clean = [
   "ruff clean",
   "rm -rf .tmp",
