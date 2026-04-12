@@ -17,6 +17,7 @@ Template for Python packages based on [`copier`](https://copier.readthedocs.io/e
     * Deploy documentation to [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) or [Read the Docs](https://about.readthedocs.com/).
     * Run pre-commit checks and tests on every pull request.
     * Publish to [PyPI](https://pypi.org/) on `vX.Y.Z` tags via [Trusted Publishing](https://docs.pypi.org/trusted-publishers/) — no API tokens.
+    * Optional automatic template updates via a bot.
 
 ## Usage
 

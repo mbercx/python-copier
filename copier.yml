@@ -40,6 +40,18 @@ coverage:
     - codecov
   default: none
 
+# github-token: uses the default GITHUB_TOKEN (zero setup, but PRs won't trigger CI).
+# pat: uses a PAT stored as COPIER_UPDATE_TOKEN secret (PRs trigger CI normally).
+auto_update:
+  type: str
+  help: 'How should automatic template updates be configured?'
+  choices:
+    - none
+    - github-token
+    - pat
+  default: none
+  when: false
+
 _subdirectory: template
 _message_after_copy: |
   The `{{package_name}}` package has been created successfully!
