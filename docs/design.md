@@ -38,13 +38,13 @@ This pattern has a few advantages:
 The user can select which documentation engine they prefer.
 Some information on the two options is already provided below, this will be fleshed out more as both frameworks are tested more rigorously.
 
-## MyST Markdown
+### MyST Markdown
 
 [MyST Markdown](https://mystmd.org/) is a Markdown-based documentation tool that avoids Sphinx' reStructuredText format while preserving most of its power.
 The main reason to use this over [MkDocs](https://www.mkdocs.org/) to test the Jupyter notebook integration, especially the "executable content".
 MyST is also easy to integrate with Sphinx, which has a lot of powerful tools, especially for scientific software.
 
-## MkDocs
+### MkDocs
 
 [MkDocs](https://www.mkdocs.org/) is another Markdown-based documentation tool that focusses even more on simplicity.
 Some features:
