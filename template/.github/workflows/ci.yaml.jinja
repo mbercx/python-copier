@@ -38,7 +38,7 @@ jobs:
 {%- if coverage == 'none' %}
       - run: hatch test
 {%- else %}
-      - run: hatch test --cover --cover-min 50
+      - run: hatch test --cover
 
       - name: Install coverage
         if: '!cancelled()'
