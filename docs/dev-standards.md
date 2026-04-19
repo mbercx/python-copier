@@ -91,8 +91,8 @@ Similarly, if a dependency is changed, it's convenient to quickly spot this, e.g
 | ✨    | introduce new features                                           | `feat`                                    | New features              |
 | 👌    | improve an existing code/feature (no breaking)                   | `perf`/`feat`                             | Improvements              |
 | 🐛    | fix a code bug                                                   | `fix`                                     | Bug fixes                 |
+| 📚    | add or adapt documentation                                       | `docs`                                    | Documentation             |
 |       | **Developer-facing**                                             |                                           |                           |
-| 📚    | add or adapt documentation                                       | `docs`                                    | Developer                 |
 | 🔄    | refactor existing code with no behavior change                   | `refactor`                                | Developer                 |
 | 🧪    | add or adapt tests                                               | `test`                                    | Developer                 |
 | ⏪    | revert a previous commit                                         | `revert`                                  | Developer                 |
