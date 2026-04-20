@@ -1,3 +1,5 @@
+default_install_hook_types: [pre-commit, commit-msg]
+
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.13.2
@@ -19,4 +21,12 @@ repos:
         types: [ python ]
         require_serial: true
         files: ^src/
-{% endif -%}
+{% endif %}
+  - repo: local
+    hooks:
+      - id: check-commit-msg
+        name: Check commit message format
+        entry: python dev/check_commit_msg.py
+        language: system
+        stages: [commit-msg]
+

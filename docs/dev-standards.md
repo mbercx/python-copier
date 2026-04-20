@@ -148,6 +148,13 @@ Similarly, if a dependency is changed, it's convenient to quickly spot this, e.g
         The icon is metadata, not decoration.
         It improves triage and doesn’t replace clear subjects/bodies.
 
+### Enforcement
+
+Generated packages include a `commit-msg` pre-commit hook (`dev/check_commit_msg.py`) that rejects commits whose subject does not start with one of the type emojis above.
+The hook is wired up automatically when contributors run `pre-commit install` (or `hatch run pre-commit:install`), thanks to `default_install_hook_types` in `.pre-commit-config.yaml`.
+
+A dedicated `commit-msgs` CI job runs the same script against every commit in a pull request (`git log base..head`), so contributors who skip the local hook still get caught before merge.
+
 ## Collaboration on GitHub
 
 ### Review process

@@ -61,9 +61,10 @@ This template includes development automation tools that ensure code quality, co
 ### Pre-commit hooks
 
 We use [`pre-commit`](https://pre-commit.com/) to run automated checks before each commit.
-The configuration is stored in `.pre-commit-config.yaml`, and only uses `hatch fmt` in two separate steps:
+The configuration is stored in `.pre-commit-config.yaml` and runs hooks at two stages.
+A single `pre-commit install` wires both up, thanks to `default_install_hook_types: [pre-commit, commit-msg]`:
 
-* `hatch fmt -f`
-* `hatch fmt -l`
+* **`pre-commit` stage** — `hatch fmt` in two separate steps: `hatch fmt -f` to format the code, then `hatch fmt -l` to lint it for issues.
+* **`commit-msg` stage** — `dev/check_commit_msg.py`, which rejects commit subjects that do not start with one of the recognized type emojis (see the [commit message conventions](dev-standards.md#specifying-the-type-of-change)).
 
-The steps are separated in first _formatting_ the code, then _linting_ it to check for issues.
+The same `check_commit_msg.py` script is also invoked by a `commit-msgs` CI job over every commit in a pull request, so contributors who skip the local hook still get caught before merge.
