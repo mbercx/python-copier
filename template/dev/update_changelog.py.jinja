@@ -143,15 +143,15 @@ def update_changelog() -> None:
             section_text += f"\n### {emoji} {section_name}\n\n"
             section_text += "\n".join(sections[emoji]) + "\n"
 
-    # Developer section with H4 subsections
+    # Developer section with plain-text subsections
     dev_text = ""
     for emoji, section_name in DEVELOPER_SECTIONS.items():
         if sections[emoji]:
-            dev_text += f"\n#### {emoji} {section_name}\n\n"
+            dev_text += f"\n{emoji} {section_name}\n\n"
             dev_text += "\n".join(sections[emoji]) + "\n"
 
     if dev_text:
-        section_text += f"\n### Developer\n{dev_text}"
+        section_text += f"\n#### Developer\n{dev_text}"
 
     header = "# Changelog\n\n"
     body = current.removeprefix("# Changelog").lstrip("\n")
