@@ -14,11 +14,23 @@ from pathlib import Path
 # Listed in priority order (matches the dev-standards table).
 VALID_EMOJIS: tuple[str, ...] = (
     # Changelog sections
-    "💥", "📦", "❌", "✨", "👌", "🐛", "📚",
+    "💥",
+    "📦",
+    "❌",
+    "✨",
+    "👌",
+    "🐛",
+    "📚",
     # Developer sections
-    "🔄", "🧪", "⏪", "🔧", "🧹",
+    "🔄",
+    "🧪",
+    "⏪",
+    "🔧",
+    "🧹",
     # Excluded from changelog, but still valid types
-    "🚀", "🐭", "❓",
+    "🚀",
+    "🐭",
+    "❓",
 )
 
 
