@@ -1,6 +1,10 @@
 site_name: Python copier
+repo_url: https://github.com/mbercx/python-copier
+repo_name: mbercx/python-copier
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
 markdown_extensions:
   - admonition
   - pymdownx.details
