@@ -59,6 +59,20 @@ To get this working:
 No repository secret is needed for public repos.
 For private repos, add a `CODECOV_TOKEN` secret to your repository and pass it in the workflow's `codecov-action` step.
 
+### Repository URL
+
+Several files in the generated package reference the source repository URL: the docs site (GitHub icon + link), `[project.urls]` in `pyproject.toml`, the README badges, and commit links in the generated changelog.
+The URL is controlled by the hidden `repo_url` question, which is empty by default so the template works without a remote.
+
+Once you have created the remote repository, set it via:
+
+```
+copier update -A -d repo_url=https://github.com/<user>/<repo>
+```
+
+The `-A` flag (`--skip-answered`) skips questions you already answered, so only `repo_url` is applied.
+To change the URL later, run the same command with the new value.
+
 ### Automatic template updates
 
 The template can optionally add a `copier-update.yaml` workflow that checks for upstream template changes every week, runs `copier update`, and opens a PR with the proposed changes.

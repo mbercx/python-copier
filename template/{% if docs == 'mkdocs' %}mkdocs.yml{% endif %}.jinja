@@ -1,7 +1,15 @@
 site_name: {{package_name}}
+{%- if repo_url %}
+repo_url: {{ repo_url }}
+repo_name: {{ repo_url.rstrip('/').split('/')[-2:] | join('/') }}
+{%- endif %}
 
 theme:
   name: material
+{%- if repo_url %}
+  icon:
+    repo: fontawesome/brands/github
+{%- endif %}
 
 markdown_extensions:
   - admonition

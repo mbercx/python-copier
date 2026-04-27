@@ -20,7 +20,12 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
 ]
+{% if repo_url %}
+[project.urls]
+Repository = "{{ repo_url }}"
+Issues = "{{ repo_url }}/issues"
 
+{% endif -%}
 [project.optional-dependencies]
 docs = [
 {% if docs == 'myst'-%}

@@ -40,6 +40,12 @@ coverage:
     - codecov
   default: none
 
+repo_url:
+  type: str
+  help: 'URL of the source repository (e.g. https://github.com/user/repo).'
+  default: ''
+  when: false
+
 # github-token: uses the default GITHUB_TOKEN (zero setup, but PRs won't trigger CI).
 # pat: uses a PAT stored as COPIER_UPDATE_TOKEN secret (PRs trigger CI normally).
 auto_update:

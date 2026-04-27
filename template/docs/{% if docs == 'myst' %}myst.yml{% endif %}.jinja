@@ -4,7 +4,11 @@ project:
   title: {{ package_name }}
   # keywords: []
   # authors: []
+{%- if repo_url %}
+  github: {{ repo_url }}
+{%- else %}
   # github: https://github.com/
+{%- endif %}
   # To autogenerate a Table of Contents, run "myst init --write-toc"
 site:
   template: book-theme
